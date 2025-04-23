@@ -1,7 +1,15 @@
-export default function Home() {
+import { Hero } from "@/components/sections/Hero";
+import { FeaturedServices } from "@/components/sections/FeaturedServices";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { CTASection } from "@/components/sections/CTASection";
+
+export default function HomePage() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+    <>
+      <Hero />
+      <FeaturedServices />
+      <Testimonials />
+      <CTASection />
+    </>
+  );
 }

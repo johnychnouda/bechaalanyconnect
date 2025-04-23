@@ -1,9 +1,8 @@
-"use client"
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-import { Providers } from "./providers";
+import { Providers } from "../components/Providers";
+import { Navbar } from "../components/layout/Navbar";
+import { Footer } from "../components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Remove metadata export from client component
-// If you need page metadata, split this into a server component
+export const metadata = {
+  title: "Bechaalany Connect",
+  description: "Your one-stop platform for all your needs",
+};
 
 export default function RootLayout({
   children,
@@ -29,7 +30,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          {children}
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
