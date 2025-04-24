@@ -7,7 +7,7 @@ export default function Home() {
   const t = useTranslations("common");
 
   return (
-    <PageLayout className={`flex min-h-screen items-center justify-center`}>
+    <PageLayout className={`flex min-h-screen`}>
       <p>{t("hello")}</p>
       <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
         Change

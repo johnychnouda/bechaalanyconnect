@@ -6,6 +6,8 @@ import { Roboto } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import TopBanner from "@/components/ui/top-banner";
+import Header from "@/components/ui/header";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -19,6 +21,7 @@ export default function App({
   messages,
 }: AppProps & { messages: any }) {
   const [queryClient] = useState(() => new QueryClient());
+  const isRTL = router.locale === "ar";
 
   return (
     <ThemeProvider>
@@ -28,8 +31,15 @@ export default function App({
           timeZone="Asia/Beirut"
           messages={messages}
         >
-          <main className={roboto.className}>
-            <Component {...pageProps} />
+          <main
+            className={`${roboto.className} ${isRTL ? "rtl" : "ltr"}`}
+            dir={isRTL ? "rtl" : "ltr"}
+          >
+            <TopBanner>
+              <Header>
+                <Component {...pageProps} />
+              </Header>
+            </TopBanner>
           </main>
         </NextIntlClientProvider>
       </QueryClientProvider>

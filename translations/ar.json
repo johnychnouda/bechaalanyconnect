@@ -1,5 +1,7 @@
 {
   "common": {
-    "hello": "مرحبا"
+    "hello": "مرحبا",
+    "enLanguage": "EN",
+    "arLanguage": "AR"
   }
 }

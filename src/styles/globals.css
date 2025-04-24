@@ -3,6 +3,10 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-    --color-background-dark: #2A2A2A; 
-    --color-background-light: #ffffff;
+  --color-background-dark: #2a2a2a;
+  --color-background-light: #ffffff;
+  --color-app-red: #e73828;
+  --color-app-black: #070707;
+  --color-app-white: #FFFFFF;
 }
+
