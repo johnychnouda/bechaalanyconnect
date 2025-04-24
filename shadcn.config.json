@@ -1,6 +1,0 @@
-{
-  "tailwindConfig": "tailwind.config.js",
-  "srcDir": "app",
-  "componentsDir": "app/components",
-  "importAlias": "@"
-}

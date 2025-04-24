@@ -1,7 +1,0 @@
-{
-  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
-  "rules": {
-    "jsx-a11y/no-noninteractive-element-interactions": "off",
-    "react/no-unescaped-entities": "off"
-  }
-}
