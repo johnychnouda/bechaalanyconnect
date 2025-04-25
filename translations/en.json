@@ -10,5 +10,8 @@
     "contactUs": "CONTACT US",
     "createAccount": "CREATE ACCOUNT",
     "profile": "PROFILE"
+  },
+  "footer": {
+    "copyright": "©{year} Bechaalany Connect All Rights Reserved"
   }
 }

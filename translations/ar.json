@@ -10,5 +10,8 @@
     "contactUs": "تواصل معنا",
     "createAccount": "إنشاء حساب",
     "profile": "الحساب"
+  },
+  "footer": {
+    "copyright": "©{year} بيشالاني كونكت جميع الحقوق محفوظة"
   }
 }

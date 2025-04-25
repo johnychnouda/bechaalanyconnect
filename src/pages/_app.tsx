@@ -8,6 +8,7 @@ import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import TopBanner from "@/components/ui/top-banner";
 import Header from "@/components/ui/header";
+import Footer from "@/components/ui/footer";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -38,6 +39,7 @@ export default function App({
             <TopBanner>
               <Header>
                 <Component {...pageProps} />
+                <Footer />
               </Header>
             </TopBanner>
           </main>
