@@ -10,12 +10,16 @@ type Props = {
 export function IconButton({
   children,
   icon,
+  className,
   iconContainerClassName,
   childrenClassName,
   ...props
 }: Props) {
   return (
-    <ButtonLink {...props} className="flex items-center gap-2">
+    <ButtonLink
+      {...props}
+      className={clsx(className, "flex items-center gap-2")}
+    >
       <div className={clsx(iconContainerClassName)}>{icon}</div>
       <p className={clsx("font-semibold text-[16px]", childrenClassName)}>
         {children}

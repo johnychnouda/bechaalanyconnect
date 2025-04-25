@@ -9,7 +9,7 @@ import LanguageThemeSwitcher from "../general/language-theme-switcher";
 export default function TopBanner({ children }: PropsWithChildren) {
   return (
     <>
-      <section className="flex bg-app-red py-2 px-4 md:px-12">
+      <section className="flex bg-app-red py-2 px-4 lg:px-12">
         <div className="flex justify-between items-center w-full">
           <div className="flex rtl:flex-row-reverse gap-2.5 items-center">
             <WhatsappWhiteIcon />
@@ -28,7 +28,7 @@ export default function TopBanner({ children }: PropsWithChildren) {
           <ButtonLink>
             <TiktokWhiteIcon />
           </ButtonLink>
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <LanguageThemeSwitcher />
           </div>
         </div>

@@ -13,5 +13,12 @@
   },
   "footer": {
     "copyright": "©{year} بيشالاني كونكت جميع الحقوق محفوظة"
+  },
+  "homePage": {
+    "viewCategories": "عرض التصنيفات",
+    "welcomeToBechaalanyConnect": "مرحبا بك في بيشالاني كونكت",
+    "welcomeToBechaalanyConnectDescription": "حيث تلتقي السرعة والموثوقية لتقديم أفضل الحلول الرقمية.",
+    "joinWhatsapp": "انضم إلى مجموعة واتساب الخاصة بنا للبقاء على اطلاع مع العروض الأخرى على موقعنا!",
+    "whatsappChannel": "قناة واتساب"
   }
 }

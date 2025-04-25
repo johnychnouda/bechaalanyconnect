@@ -33,11 +33,11 @@ export default function Header({ children }: PropsWithChildren) {
 
   return (
     <>
-      <PageLayout className="sticky top-0 py-3 px-4 md:px-12 flex justify-between items-center w-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.1)] z-10">
+      <PageLayout className="sticky top-0 py-3 px-4 lg:px-12 flex justify-between items-center w-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.1)] z-10">
         <ButtonLink href="/">
           {theme === "dark" ? <LogoWhiteIcon /> : <LogoIcon />}
         </ButtonLink>
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           <IconButton href="/categories" icon={<CategoryBoxesIcon />}>
             {t("categories")}
           </IconButton>
@@ -49,7 +49,7 @@ export default function Header({ children }: PropsWithChildren) {
           </IconButton>
         </div>
         <div className="flex items-center gap-2">
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             {isAuthenticated ? (
               <ButtonLink href="/profile">
                 <ProfileIcon />
@@ -67,14 +67,14 @@ export default function Header({ children }: PropsWithChildren) {
             <ButtonLink>
               <SearchIcon />
             </ButtonLink>
-            <ButtonLink className="block md:hidden" onClick={toggle}>
+            <ButtonLink className="block lg:hidden" onClick={toggle}>
               {isOpen ? <CloseIcon /> : <BurgerIcon />}
             </ButtonLink>
           </div>
         </div>
       </PageLayout>
       {isOpen && (
-        <PageLayout className="sticky top-[68px] bg-white z-[5] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.1)] md:hidden">
+        <PageLayout className="sticky top-[68px] bg-white z-[5] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.1)] lg:hidden">
           <div className="flex flex-col gap-4 px-4 py-4">
             {isAuthenticated ? (
               <IconButton href="/" icon={<ProfileIcon />}>

@@ -2,7 +2,8 @@
   "common": {
     "hello": "Hello",
     "enLanguage": "EN",
-    "arLanguage": "AR"
+    "arLanguage": "AR",
+    "appName": "Bechaalany Connect"
   },
   "header": {
     "categories": "CATEGORIES",
@@ -13,5 +14,12 @@
   },
   "footer": {
     "copyright": "©{year} Bechaalany Connect All Rights Reserved"
+  },
+  "homePage": {
+    "viewCategories": "VIEW CATEGORIES",
+    "welcomeTo": "Welcome to",
+    "welcomeToDescription": "Where speed and reliability meet to deliver the best digital solutions.",
+    "joinWhatsapp": "Join Our WhatsApp Community to Stay Updated with the Latest Offers on Our Website!",
+    "whatsappChannel": "WHATSAPP CHANNEL"
   }
 }
