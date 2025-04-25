@@ -2,7 +2,9 @@
   "common": {
     "hello": "مرحبا",
     "enLanguage": "EN",
-    "arLanguage": "AR"
+    "arLanguage": "AR",
+    "viewMore": "عرض الكل",
+    "appName": "بيشالاني كونكت"
   },
   "header": {
     "categories": "التصنيفات",
@@ -16,9 +18,12 @@
   },
   "homePage": {
     "viewCategories": "عرض التصنيفات",
-    "welcomeToBechaalanyConnect": "مرحبا بك في بيشالاني كونكت",
-    "welcomeToBechaalanyConnectDescription": "حيث تلتقي السرعة والموثوقية لتقديم أفضل الحلول الرقمية.",
+    "welcomeTo": "مرحبا بك في",
+    "welcomeToDescription": "حيث تلتقي السرعة والموثوقية لتقديم أفضل الحلول الرقمية.",
     "joinWhatsapp": "انضم إلى مجموعة واتساب الخاصة بنا للبقاء على اطلاع مع العروض الأخرى على موقعنا!",
-    "whatsappChannel": "قناة واتساب"
+    "whatsappChannel": "قناة واتساب",
+    "categories": "التصنيفات",
+    "latestProducts": "آخر المنتجات",
+    "featuredProducts": "المنتجات المتميزة"
   }
 }

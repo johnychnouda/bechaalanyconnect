@@ -6,10 +6,12 @@ import { WhatsappWhiteIcon } from "@/assets/icons/whatsapp-white.icon";
 import Image from "next/image";
 import { useIsMounted } from "@/hooks/use-is-mounted";
 import { useAppTheme } from "@/hooks/use-app-theme";
+import { useLanguage } from "@/hooks/use-language";
 
 export default function HomePageHeader() {
   const t = useTranslations("homePage");
   const tCommon = useTranslations("common");
+  const { isRTL } = useLanguage();
 
   const { theme } = useAppTheme();
   const isMounted = useIsMounted();
@@ -23,22 +25,22 @@ export default function HomePageHeader() {
               src="/homepage-background.png"
               alt="Background Image"
               fill
-              className="pointer-events-none"
+              className={`pointer-events-none ${isRTL ? "scale-x-[-1]" : ""}`}
             />
           ) : (
             <Image
               src="/homepage-background-light.png"
               alt="Background Image"
               fill
-              className="pointer-events-none"
+              className={`pointer-events-none ${isRTL ? "scale-x-[-1]" : ""}`}
             />
           ))}
         <div className="flex flex-col gap-8 w-full self-center px-11 items-start overflow-hidden lg:w-1/2">
           <div className="flex flex-col py-16 lg:py-0">
-            <p className="text-app-black dark:text-app-white text-[32px] font-semibold">
+            <p className="text-app-black dark:text-app-white text-[26px] sm:text-[32px] font-semibold">
               {t("welcomeTo").toUpperCase()}
             </p>
-            <p className="text-app-red text-[32px] font-semibold">
+            <p className="text-app-red text-[24px] sm:text-[32px] font-semibold">
               {tCommon("appName").toUpperCase()}
             </p>
             <p className="text-app-black dark:text-app-white text-[16px] font-bold hidden lg:block">
@@ -56,7 +58,7 @@ export default function HomePageHeader() {
           <Image
             src="/homepage-small-image.png"
             alt="Small Image"
-            className="pointer-events-none"
+            className={`pointer-events-none ${isRTL ? "scale-x-[-1]" : ""}`}
             fill
             quality={100}
           />

@@ -3,7 +3,8 @@
     "hello": "Hello",
     "enLanguage": "EN",
     "arLanguage": "AR",
-    "appName": "Bechaalany Connect"
+    "appName": "Bechaalany Connect",
+    "viewMore": "View All"
   },
   "header": {
     "categories": "CATEGORIES",
@@ -20,6 +21,9 @@
     "welcomeTo": "Welcome to",
     "welcomeToDescription": "Where speed and reliability meet to deliver the best digital solutions.",
     "joinWhatsapp": "Join Our WhatsApp Community to Stay Updated with the Latest Offers on Our Website!",
-    "whatsappChannel": "WHATSAPP CHANNEL"
+    "whatsappChannel": "WHATSAPP CHANNEL",
+    "categories": "CATEGORIES",
+    "latestProducts": "LATEST PRODUCTS",
+    "featuredProducts": "FEATURED PRODUCTS"
   }
 }
