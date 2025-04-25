@@ -20,7 +20,7 @@ export default function Product({ product }: Props) {
           fill
         />
       </div>
-      <p className="text-app-black dark:text-app-white text-[20px] font-semibold text-center">
+      <p className="text-app-black dark:text-app-white text-[20px] font-semibold">
         {product.title}
       </p>
     </ButtonLink>
