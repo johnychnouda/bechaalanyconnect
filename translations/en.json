@@ -3,5 +3,12 @@
     "hello": "Hello",
     "enLanguage": "EN",
     "arLanguage": "AR"
+  },
+  "header": {
+    "categories": "CATEGORIES",
+    "aboutUs": "ABOUT US",
+    "contactUs": "CONTACT US",
+    "createAccount": "CREATE ACCOUNT",
+    "profile": "PROFILE"
   }
 }

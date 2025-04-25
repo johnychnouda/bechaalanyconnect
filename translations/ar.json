@@ -3,5 +3,12 @@
     "hello": "مرحبا",
     "enLanguage": "EN",
     "arLanguage": "AR"
+  },
+  "header": {
+    "categories": "التصنيفات",
+    "aboutUs": "عننا",
+    "contactUs": "تواصل معنا",
+    "createAccount": "إنشاء حساب",
+    "profile": "الحساب"
   }
 }
