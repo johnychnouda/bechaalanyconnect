@@ -25,5 +25,8 @@
     "categories": "CATEGORIES",
     "latestProducts": "LATEST PRODUCTS",
     "featuredProducts": "FEATURED PRODUCTS"
+  },
+  "categories": {
+    "homepage": "Homepage"
   }
 }

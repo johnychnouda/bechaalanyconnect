@@ -25,5 +25,8 @@
     "categories": "التصنيفات",
     "latestProducts": "آخر المنتجات",
     "featuredProducts": "المنتجات المتميزة"
+  },
+  "categories": {
+    "homepage": "الرئيسية"
   }
 }
