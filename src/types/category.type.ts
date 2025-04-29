@@ -3,6 +3,7 @@ export type Category = {
   title: string;
   image: string;
   category: Category | null;
+  showProducts: boolean;
 };
 
 
