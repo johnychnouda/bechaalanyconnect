@@ -60,6 +60,7 @@ export default function HomePageHeader() {
             alt="Small Image"
             className={`pointer-events-none ${isRTL ? "scale-x-[-1]" : ""}`}
             fill
+            objectFit="cover"
             quality={100}
           />
         </div>
