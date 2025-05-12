@@ -8,8 +8,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import TopBanner from "@/components/ui/top-banner";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
-import axiosConfig from "@/utils/axiosConfig";
-import axios from 'axios';
+// import axiosConfig from "@/utils/axiosConfig";
+// import axios from 'axios';
 import GlobalState from "@/utils/GlobalState";
 
 
@@ -54,15 +54,15 @@ export default function App({
   );
 }
 
-import { NextPageContext } from "next";
+// import { NextPageContext } from "next";
 
-App.getInitialProps = async ({ ctx }: { ctx: NextPageContext }) => {
-  const locale = ctx.locale || 'en';
-  axiosConfig(locale);
-  const generalData = await axios.get('/general')
+// App.getInitialProps = async ({ ctx }: { ctx: NextPageContext }) => {
+//   const locale = ctx.locale || 'en';
+//   axiosConfig(locale);
+//   const generalData = await axios.get('/general')
 
-  return {
-    generalData: generalData.data,
-    locale,
-  }
-}
+//   return {
+//     generalData: generalData.data,
+//     locale,
+//   }
+// }

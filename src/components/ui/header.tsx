@@ -15,6 +15,7 @@ import { CloseIcon } from "@/assets/icons/close.icon";
 import LanguageThemeSwitcher from "../general/language-theme-switcher";
 import GlobalState from "@/utils/GlobalState";
 import { GlobalStateType, menuItem } from "@/types/globalSettings.type";
+import { CategoryBoxesIcon } from "@/assets/icons/category-boxes.icon";
 
 
 
@@ -46,11 +47,24 @@ export default function Header({ children }: PropsWithChildren) {
         </ButtonLink>
         <div className="hidden items-center gap-8 lg:flex">
           {
+            menuItems?.length > 0 ?
             menuItems?.map((item: menuItem) => (
               <IconButton key={item.id} href={item.slug} icon={item?.full_path?.icon}>
                 {item?.title || 'TEST'}
               </IconButton>
             ))
+            :
+            <>
+              <IconButton href="/" icon={<CategoryBoxesIcon />}>
+                {t("categories")}
+              </IconButton>
+              <IconButton href="/categories" icon={<CategoryBoxesIcon />}>
+                {t("aboutUs")}
+              </IconButton>
+              <IconButton href="/about" icon={<CategoryBoxesIcon />}>
+                {t("contactUs")}
+              </IconButton>
+            </>
           }
         </div>
         <div className="flex items-center gap-2">
