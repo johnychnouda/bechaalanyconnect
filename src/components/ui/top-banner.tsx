@@ -7,6 +7,7 @@ import { TiktokWhiteIcon } from "@/assets/icons/tiktok-white.icon";
 import LanguageThemeSwitcher from "../general/language-theme-switcher";
 
 export default function TopBanner({ children }: PropsWithChildren) {
+
   return (
     <>
       <section className="flex bg-app-red py-2 px-4 lg:px-12">
