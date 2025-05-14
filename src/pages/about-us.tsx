@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 
 export default function AboutUs() {
   return (
@@ -79,6 +79,9 @@ export default function AboutUs() {
                     </Link>
                     <Link href="https://facebook.com" className="text-[#E93323] hover:opacity-80">
                       <FaFacebook size={28} />
+                    </Link>
+                    <Link href="https://tiktok.com" className="text-[#E93323] hover:opacity-80">
+                      <FaTiktok size={28} />
                     </Link>
                   </div>
                 </div>
