@@ -47,7 +47,7 @@ export default function Header({ children }: PropsWithChildren) {
         </ButtonLink>
         <div className="hidden items-center gap-8 lg:flex">
           {
-            menuItems?.length > 0 ?
+            (menuItems?.length ?? 0) > 0 ?
             menuItems?.map((item: menuItem) => (
               <IconButton key={item.id} href={item.slug} icon={item?.full_path?.icon}>
                 {item?.title || 'TEST'}
@@ -58,10 +58,10 @@ export default function Header({ children }: PropsWithChildren) {
               <IconButton href="/" icon={<CategoryBoxesIcon />}>
                 {t("categories")}
               </IconButton>
-              <IconButton href="/categories" icon={<CategoryBoxesIcon />}>
+              <IconButton href="/about" icon={<CategoryBoxesIcon />}>
                 {t("aboutUs")}
               </IconButton>
-              <IconButton href="/about" icon={<CategoryBoxesIcon />}>
+              <IconButton href="/contact-us" icon={<CategoryBoxesIcon />}>
                 {t("contactUs")}
               </IconButton>
             </>
