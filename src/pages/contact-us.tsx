@@ -23,6 +23,12 @@ export default function ContactUs() {
     // Form submission logic here
   };
 
+  // Add this in your component or in your global CSS
+  const redCursorStyle = {
+    cursor: 'pointer',
+    color: '#E93323'
+  };
+
   return (
     <>
       <Head>
@@ -67,8 +73,9 @@ export default function ContactUs() {
                   {/* Subject dropdown */}
                   <div className="relative">
                     <div 
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg flex justify-between items-center cursor-pointer"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg flex justify-between items-center"
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      style={{ cursor: 'default', color: '#E93323' }}
                     >
                       <span className={`${subject ? "text-black" : "text-gray-500"}`}>
                         {subject || "Subject"}
@@ -83,7 +90,8 @@ export default function ContactUs() {
                         {subjects.map((item, index) => (
                           <div 
                             key={index}
-                            className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                            className="px-4 py-2 hover:bg-gray-100"
+                            style={{ cursor: 'default', color: '#E93323' }}
                             onClick={() => {
                               setSubject(item);
                               setIsDropdownOpen(false);
