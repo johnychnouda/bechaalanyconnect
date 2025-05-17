@@ -55,7 +55,7 @@ export default function Header({ children }: PropsWithChildren) {
             ))
             :
             <>
-              <IconButton href="/" icon={<CategoryBoxesIcon />}>
+              <IconButton href="/categories" icon={<CategoryBoxesIcon />}>
                 {t("categories")}
               </IconButton>
               <IconButton href="/about" icon={<CategoryBoxesIcon />}>
