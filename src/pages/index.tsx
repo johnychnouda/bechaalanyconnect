@@ -3,47 +3,36 @@ import HomePageHeader from "@/components/home-page/home-page-header";
 import Product from "@/components/products/product";
 import PageGrid from "@/components/ui/page-grid";
 import PageLayout from "@/components/ui/page-layout";
-import { useQuery } from "@tanstack/react-query";
-import { getCategories } from "@/services/categories.service";
-import { getProducts } from "@/services/products.service";
+import { dummyCategories } from "@/utils/category.dummy";
+import { dummyProducts } from "@/utils/product.dummy";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
-  const { data: categories = [], isLoading: isLoadingCategories } = useQuery({
-    queryKey: ["categories"],
-    queryFn: getCategories,
-  });
-
-  const { data: products = [], isLoading: isLoadingProducts } = useQuery({
-    queryKey: ["products"],
-    queryFn: getProducts,
-  });
-
-  // Get featured products (first 5)
-  const featuredProducts = products.slice(0, 5);
-  // Get latest products (last 5)
-  const latestProducts = products.slice(-5);
+  const t = useTranslations("homePage");
 
   return (
     <PageLayout className={`flex flex-col min-h-screen gap-16 pb-32`}>
       <HomePageHeader />
       <section className="flex flex-col gap-20 px-12">
         <PageGrid
-          items={categories}
-          label="CATEGORIES"
-          renderItem={(item) => <Category key={item.id} category={item} />}
+          items={dummyCategories}
+          label={t("categories")}
           viewMoreHref="/categories"
+          renderItem={(item) => <Category key={item.id} category={item} />}
         />
         <PageGrid
-          items={featuredProducts}
-          label="FEATURED PRODUCTS"
+          items={dummyProducts}
+          label={t("featuredProducts")}
+          viewMoreHref="/products"
+          itemsContainerClassName="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
           renderItem={(item) => <Product key={item.id} product={item} />}
-          viewMoreHref="/products/featured"
         />
         <PageGrid
-          items={latestProducts}
-          label="LATEST PRODUCTS"
+          items={dummyProducts}
+          label={t("latestProducts")}
+          viewMoreHref="/products"
+          itemsContainerClassName="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
           renderItem={(item) => <Product key={item.id} product={item} />}
-          viewMoreHref="/products/latest"
         />
       </section>
     </PageLayout>

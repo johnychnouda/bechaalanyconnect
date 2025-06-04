@@ -14,84 +14,107 @@ import { useAppMobileMenuStore } from "@/store/app-mobile-menu.store";
 import { CloseIcon } from "@/assets/icons/close.icon";
 import LanguageThemeSwitcher from "../general/language-theme-switcher";
 import GlobalState from "@/utils/GlobalState";
-import { GlobalStateType } from "@/types/globalSettings.type";
-import NavigationMenu from "./navigation-menu";
-import ThemeSwitcher from "../general/theme-switcher";
-import { useAuth } from '@/context/AuthContext';
+import { GlobalStateType, menuItem } from "@/types/globalSettings.type";
+import { CategoryBoxesIcon } from "@/assets/icons/category-boxes.icon";
+
+
+
 
 export default function Header({ children }: PropsWithChildren) {
   const t = useTranslations("header");
+
   const globalState = useContext<GlobalStateType>(GlobalState);
-  const menuItems = globalState?.generalData?.menu_items;
+
+  const menuItems = globalState?.generalData?.menu_items ;
   const generalData = globalState?.generalData?.settings;
+
   const { theme } = useAppTheme();
+
   const isMounted = useIsMounted();
+
   const { isOpen, toggle } = useAppMobileMenuStore();
-  const { isAuthenticated, user } = useAuth();
+
+  // TODO: Add auth
+  const isAuthenticated = false;
 
   if (!isMounted) return null;
 
   return (
     <>
       <PageLayout className="sticky top-0 py-3 px-4 lg:px-12 flex justify-between items-center w-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.1)] z-10">
-        <div className="flex items-center gap-4">
-          <ButtonLink href="/">
-            {theme === "dark" ? <LogoWhiteIcon /> : <LogoIcon />}
-          </ButtonLink>
-          <ThemeSwitcher />
+        <ButtonLink href="/">
+          {theme === "dark" ? <LogoWhiteIcon /> : <LogoIcon />}
+        </ButtonLink>
+        <div className="hidden items-center gap-8 lg:flex">
+          {
+            (menuItems?.length ?? 0) > 0 ?
+            menuItems?.map((item: menuItem) => (
+              <IconButton key={item.id} href={item.slug} icon={item?.full_path?.icon}>
+                {item?.title || 'TEST'}
+              </IconButton>
+            ))
+            :
+            <>
+              <IconButton href="/categories" icon={<CategoryBoxesIcon />}>
+                {t("categories")}
+              </IconButton>
+              <IconButton href="/about" icon={<CategoryBoxesIcon />}>
+                {t("aboutUs")}
+              </IconButton>
+              <IconButton href="/contact-us" icon={<CategoryBoxesIcon />}>
+                {t("contactUs")}
+              </IconButton>
+            </>
+          }
         </div>
-
-        <NavigationMenu items={menuItems} />
-
-        <div className="flex items-center gap-4">
-          <div className="hidden lg:flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <div className="hidden lg:block">
             {isAuthenticated ? (
-              <>
-                <ButtonLink href="/account-dashboard" className="transition-all duration-200 hover:bg-app-red p-2 rounded-full group">
-                  <ProfileIcon className="text-app-red group-hover:text-white" />
-                </ButtonLink>
-                <span className="font-bold text-[18px] text-app-red">{user ? '50.00 $' : ''}</span>
-              </>
+              <ButtonLink href="/profile">
+                <ProfileIcon />
+              </ButtonLink>
             ) : (
-              <>
-                <ButtonLink
-                  href="/auth/register"
-                  className="text-white text-center bg-app-red py-2 px-6 rounded-full font-bold text-[16px] border-2 border-app-red transition-all duration-200 hover:bg-white hover:text-app-red"
-                >
-                  CREATE ACCOUNT
-                </ButtonLink>
-                <ButtonLink href="/auth/login" className="transition-all duration-200 hover:bg-app-red p-2 rounded-full group">
-                  <ProfileIcon className="text-app-red group-hover:text-white" />
-                </ButtonLink>
-              </>
+              <ButtonLink
+                href="/auth/register"
+                className="text-app-white text-center bg-app-red py-2 px-6 rounded-full font-bold text-[16px]"
+              >
+                {generalData?.create_account_button}
+              </ButtonLink>
             )}
-            <ButtonLink className="transition-all duration-200 hover:bg-app-red p-2 rounded-full group">
-              <SearchIcon strokeWidth={3.5} width={28} height={28} className="text-app-red group-hover:text-white" />
+          </div>
+          <div className="flex items-center gap-6">
+            <ButtonLink>
+              <SearchIcon />
+            </ButtonLink>
+            <ButtonLink className="block lg:hidden" onClick={toggle}>
+              {isOpen ? <CloseIcon /> : <BurgerIcon />}
             </ButtonLink>
           </div>
-          <ButtonLink className="block lg:hidden" onClick={toggle}>
-            {isOpen ? <CloseIcon /> : <BurgerIcon />}
-          </ButtonLink>
         </div>
       </PageLayout>
-
       {isOpen && (
-        <PageLayout className="sticky top-[68px] bg-white dark:bg-app-black z-[5] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.1)] lg:hidden">
+        <PageLayout className="sticky top-[68px] bg-white z-[5] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.1)] lg:hidden">
           <div className="flex flex-col gap-4 px-4 py-4">
             {isAuthenticated ? (
-              <IconButton href="/account-dashboard" icon={<ProfileIcon />}>
-                PROFILE
+              <IconButton href="/" icon={<ProfileIcon />}>
+                {t("profile")}
               </IconButton>
             ) : (
               <ButtonLink
                 href="/auth/register"
                 className="text-app-white bg-app-red py-2 px-6 text-center rounded-full font-bold text-[16px]"
               >
-                SIGN UP
+                {t("createAccount")}
               </ButtonLink>
             )}
 
-            <NavigationMenu items={menuItems} isMobile />
+            {
+              menuItems?.map((item: menuItem) => (
+                <IconButton key={item.id} href={item.slug} icon={item?.full_path?.icon}>
+                  {item?.title || 'TEST'}
+                </IconButton>
+              ))
+            }
           </div>
           <div className="flex py-2 bg-app-red px-4 justify-end">
             <LanguageThemeSwitcher />

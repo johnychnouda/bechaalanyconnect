@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
-import BackButton from "@/components/ui/back-button";
 
 export default function ContactUs() {
   const [subject, setSubject] = useState("");
@@ -42,9 +41,6 @@ export default function ContactUs() {
         {/* Main content - with flex-grow to push footer down */}
         <div className="flex-grow">
           <div className="container mx-auto py-12 px-4 md:px-6 lg:px-8">
-            <div className="mb-6">
-              <BackButton />
-            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Left column - Form section */}
               <div className="bg-white rounded-lg p-8 shadow-md">

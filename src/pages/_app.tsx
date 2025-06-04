@@ -8,11 +8,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import TopBanner from "@/components/ui/top-banner";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
-import WhatsAppButton from "@/components/ui/whatsapp-button";
 // import axiosConfig from "@/utils/axiosConfig";
 // import axios from 'axios';
 import GlobalState from "@/utils/GlobalState";
-import { AuthProvider } from '@/context/AuthContext';
+
+
 
 export default function App({
   Component,
@@ -27,35 +27,29 @@ export default function App({
 
   return (
     <ThemeProvider>
-      <AuthProvider>
-        <GlobalState.Provider value={{
-          generalData,locale
-        }}>
-          <QueryClientProvider client={queryClient}>
-            <NextIntlClientProvider
-              locale={router.locale}
-              timeZone="Asia/Beirut"
-              messages={messages}
-            >
-              <main
-                className={`min-h-screen flex flex-col ${isRTL ? "rtl" : "ltr"}`}
-                dir={isRTL ? "rtl" : "ltr"}
-              >
-                <TopBanner>
-                  <Header>
-                    <div className="flex-grow">
-                      <Component {...pageProps} />
-                    </div>
-                  </Header>
-                </TopBanner>
+      <GlobalState.Provider value={{
+        generalData,locale
+      }}>
+      <QueryClientProvider client={queryClient}>
+        <NextIntlClientProvider
+          locale={router.locale}
+          timeZone="Asia/Beirut"
+          messages={messages}
+        >
+          <main
+            className={`${isRTL ? "rtl" : "ltr"}`}
+            dir={isRTL ? "rtl" : "ltr"}
+          >
+            <TopBanner>
+              <Header>
+                <Component {...pageProps} />
                 <Footer />
-                {/* WhatsApp Floating Button */}
-                <WhatsAppButton style={{ position: "fixed", bottom: "2rem", right: "2rem", zIndex: 50 }} />
-              </main>
-            </NextIntlClientProvider>
-          </QueryClientProvider>
-        </GlobalState.Provider>
-      </AuthProvider>
+              </Header>
+            </TopBanner>
+          </main>
+        </NextIntlClientProvider>
+      </QueryClientProvider>
+      </GlobalState.Provider>
     </ThemeProvider>
   );
 }

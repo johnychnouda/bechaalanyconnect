@@ -1,12 +1,14 @@
-import ButtonLink from "./button-link";
-import clsx from "clsx";
+import { Url } from "next/dist/shared/lib/router/router";
 import React from "react";
+import ButtonLink from "./button-link";
+import { useTranslations } from "next-intl";
+import clsx from "clsx";
 
-type Props<T> = {
+type Props<T = unknown> = {
   items: T[];
-  renderItem: (item: T) => React.ReactNode;
+  renderItem: (item: T, index: number) => React.ReactNode;
   label?: string;
-  viewMoreHref?: string;
+  viewMoreHref?: Url;
   itemsContainerClassName?: string;
 };
 
@@ -17,6 +19,8 @@ export default function PageGrid<T>({
   viewMoreHref,
   itemsContainerClassName,
 }: Props<T>) {
+  const t = useTranslations("common");
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex justify-between items-center">
@@ -30,7 +34,7 @@ export default function PageGrid<T>({
             href={viewMoreHref}
             className="text-app-red font-semibold text-[16px] sm:text-[20px] underline"
           >
-            VIEW ALL
+            {t("viewMore").toUpperCase()}
           </ButtonLink>
         )}
       </div>

@@ -3,39 +3,30 @@
     "hello": "Hello",
     "enLanguage": "EN",
     "arLanguage": "AR",
-    "viewMore": "View More",
-    "appName": "BECHAALANY CONNECT",
-    "back": "Back",
-    "comingSoon": "Coming Soon"
+    "appName": "Bechaalany Connect",
+    "viewMore": "View All"
   },
   "header": {
-    "categories": "Categories",
-    "aboutUs": "About Us",
-    "contactUs": "Contact Us",
-    "createAccount": "Create Account",
-    "profile": "Profile"
+    "categories": "CATEGORIES",
+    "aboutUs": "ABOUT US",
+    "contactUs": "CONTACT US",
+    "createAccount": "CREATE ACCOUNT",
+    "profile": "PROFILE"
   },
   "footer": {
-    "copyright": "©{year} Bechaalany Connect. All rights reserved."
+    "copyright": "©{year} Bechaalany Connect All Rights Reserved"
   },
   "homePage": {
-    "viewCategories": "View Categories",
-    "welcomeTo": "WELCOME TO",
+    "viewCategories": "VIEW CATEGORIES",
+    "welcomeTo": "Welcome to",
     "welcomeToDescription": "Where speed and reliability meet to deliver the best digital solutions.",
     "joinWhatsapp": "Join Our WhatsApp Community to Stay Updated with the Latest Offers on Our Website!",
     "whatsappChannel": "WHATSAPP CHANNEL",
-    "categories": "Categories",
-    "latestProducts": "Latest Products",
-    "featuredProducts": "Featured Products"
+    "categories": "CATEGORIES",
+    "latestProducts": "LATEST PRODUCTS",
+    "featuredProducts": "FEATURED PRODUCTS"
   },
   "categories": {
     "homepage": "Homepage"
-  },
-  "products": {
-    "title": "Products",
-    "searchPlaceholder": "Search products...",
-    "allCategories": "All Categories",
-    "loading": "Loading products...",
-    "noProductsFound": "No products found"
   }
 }

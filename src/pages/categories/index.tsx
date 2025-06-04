@@ -1,9 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import BackButton from '@/components/ui/back-button';
-import { useTranslations } from 'next-intl';
-import Breadcrumb from '@/components/ui/breadcrumb';
-import Card from '@/components/ui/card';
 
 // Placeholder data for categories
 const categories = [
@@ -27,27 +23,31 @@ interface Category {
 
 const CategoryCard: React.FC<{ category: Category }> = ({ category }) => {
   return (
-    <Card
-      id={category.id.toString()}
-      title={category.name}
-      image={category.image}
-      type="category"
-      href={`/categories/${category.name.toLowerCase().replace(/\s+/g, '-')}`} />
+    <>
+      {/* Clicking the card is the "View All" action for the category */}
+      {/* TODO: Update href for other categories as their pages are implemented */}
+      <Link href={category.name === 'GAMING' ? '/gaming' : '/gaming'} className="block rounded-lg overflow-hidden shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 ease-in-out group relative">
+        <div className="relative w-full aspect-video">
+          <img src={category.image} alt={category.name} className="w-full h-auto object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105 group-hover:brightness-90" />
+          {/* View All Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+            {/* Add semi-transparent black background on hover */}
+            <div className="absolute inset-0 bg-black bg-opacity-20"></div>{/* Reduced opacity */}
+            <span className="relative text-app-red text-lg font-bold underline z-10">View All</span>{/* Ensure text is above overlay */}
+          </div>
+        </div>
+      </Link>
+    </>
   );
 };
 
 const CategoriesPage = () => {
-  const t = useTranslations("common");
-
-  const breadcrumbItems = [
-    { label: 'Homepage', href: '/' },
-    { label: 'Categories' }
-  ];
-
   return (
     <div className="container mx-auto px-4 py-6">
-      <Breadcrumb items={breadcrumbItems} />
-      <BackButton href="/" className="mb-4" />
+      {/* Breadcrumb */}
+      <div className="text-sm text-gray-500 mb-4">
+        <Link href="/">Homepage</Link> / <span>Categories</span>
+      </div>
 
       {/* Page Title */}
       <h1 className="text-2xl font-bold mb-6">CATEGORIES</h1>
@@ -59,7 +59,7 @@ const CategoriesPage = () => {
             <CategoryCard category={category} />
             {/* Category Name below the card, centered */}
             <div className="text-center mt-2">
-              <h3 className="text-[18px] font-semibold text-gray-800">{category.name}</h3>
+              <h3 className="text-[18px] font-semibold text-gray-800">{category.name}</h3>{/* Apply Roboto font, semiBold (600), 20px size */}
             </div>
           </div>
         ))}

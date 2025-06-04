@@ -6,6 +6,4 @@ export type Product = {
   image: string;
   price: number;
   category: Category | null;
-  categoryId: string;
-  hasContent?: boolean;
 };

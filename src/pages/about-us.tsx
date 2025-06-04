@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
-import BackButton from "@/components/ui/back-button";
 
 export default function AboutUs() {
   return (
@@ -18,9 +17,6 @@ export default function AboutUs() {
         {/* Main content */}
         <div className="flex-grow">
           <div className="container mx-auto py-12 px-4 md:px-6 lg:px-8">
-            <div className="mb-6">
-              <BackButton />
-            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Left column - Logo */}
               <div className="bg-gray-200 rounded-lg p-8 flex items-center justify-center">

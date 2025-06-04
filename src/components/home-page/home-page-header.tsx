@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonLink from "../ui/button-link";
+import { useTranslations } from "next-intl";
 import { IconButton } from "../ui/icon-button";
 import { WhatsappWhiteIcon } from "@/assets/icons/whatsapp-white.icon";
 import Image from "next/image";
@@ -8,7 +9,10 @@ import { useAppTheme } from "@/hooks/use-app-theme";
 import { useLanguage } from "@/hooks/use-language";
 
 export default function HomePageHeader() {
+  const t = useTranslations("homePage");
+  const tCommon = useTranslations("common");
   const { isRTL } = useLanguage();
+
   const { theme } = useAppTheme();
   const isMounted = useIsMounted();
 
@@ -34,20 +38,20 @@ export default function HomePageHeader() {
         <div className="flex flex-col gap-8 w-full self-center px-11 items-start overflow-hidden lg:w-1/2">
           <div className="flex flex-col py-16 lg:py-0">
             <p className="text-app-black dark:text-app-white text-[26px] sm:text-[32px] font-semibold">
-              WELCOME TO
+              {t("welcomeTo").toUpperCase()}
             </p>
             <p className="text-app-red text-[24px] sm:text-[32px] font-semibold">
-              BECHAALANY CONNECT
+              {tCommon("appName").toUpperCase()}
             </p>
             <p className="text-app-black dark:text-app-white text-[16px] font-bold hidden lg:block">
-              Where speed and reliability meet to deliver the best digital solutions.
+              {t("welcomeToDescription")}
             </p>
           </div>
           <ButtonLink
             href="/categories"
             className="text-app-white bg-app-red py-2 px-6 text-center rounded-full font-bold text-[16px] hidden lg:block"
           >
-            VIEW CATEGORIES
+            {t("viewCategories")}
           </ButtonLink>
         </div>
         <div className="flex relative self-end w-full h-full lg:w-2/3 lg:h-2/3">
@@ -62,13 +66,13 @@ export default function HomePageHeader() {
         </div>
       </section>
       <section className="flex flex-col justify-between items-center px-12 gap-4 text-center lg:flex-row">
-        <p className="font-bold">Join Our WhatsApp Community to Stay Updated with the Latest Offers on Our Website!</p>
+        <p className="font-bold">{t("joinWhatsapp")}</p>
         <IconButton
           icon={<WhatsappWhiteIcon />}
           href="https://wa.me/201010000000"
           className="text-app-white bg-app-whatsapp-green p-2 px-6 text-center rounded-full font-bold text-[16px]"
         >
-          WHATSAPP CHANNEL
+          {t("whatsappChannel")}
         </IconButton>
       </section>
     </div>
